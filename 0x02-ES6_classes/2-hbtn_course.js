@@ -39,7 +39,7 @@ export default class HolbertonCourse {
     return this._students;
   }
 
-  set studetns(value) {
+  set students(value) {
     this._students = value;
   }
 }
