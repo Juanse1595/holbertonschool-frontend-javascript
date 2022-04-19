@@ -17,7 +17,7 @@ You must use filter and map combined. */
 export default function updateStudentGradeByCity(students, city, newGrades) {
   // First, filter by city
   const studentsByCity = students.filter(
-    (student) => student.location === city
+    (student) => student.location === city,
   );
   // Then, fill all students with grades = 'N/A'
   // const studentsWithGrades = studentsByCity.map((student) => ({
@@ -26,9 +26,11 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
   // }));
   // Now, fill the grades of the students if they exist
   for (const studentObj of studentsByCity) {
-    studentObj.grade = newGrades
-      .filter((grade) => grade.studentId === studentObj.id)
-      .map((grade) => grade.grade)[0];
+    [studentObj.grade] = [
+      newGrades
+        .filter((grade) => grade.studentId === studentObj.id)
+        .map((grade) => grade.grade)[0],
+    ];
     // console.log(
     //   `this is studentObj.grade = ${
     //     studentObj.grade
@@ -51,5 +53,5 @@ export default function updateStudentGradeByCity(students, city, newGrades) {
   // const newGradesOfGil = newGrades
   //   .filter((grade) => grade.studentId === 1)
   //   .map((grade) => (grade.grade ? grade.grade : 'N/A'));
-  return studentsWithGrades;
+  return studentsByCity;
 }
