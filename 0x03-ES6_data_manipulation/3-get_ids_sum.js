@@ -1,4 +1,5 @@
-/* Create a function getStudentIdsSum that returns the sum of all the student ids.
+/* Create a function getStudentIdsSum that returns the sum of all the student
+ids.
 
 It should accept a list of students (from getListStudents) as a parameter.
 
