@@ -25,3 +25,21 @@ attribute named numberOfReports(number) */
 interface Directors extends Teacher {
   numberOfReports: number
 }
+
+/* Write a function printTeacher:
+
+- It accepts two arguments firstName and lastName
+- It returns the first letter of the firstName and the full lastName
+- Example: printTeacher("John", "Doe") -> J. Doe
+Write an interface for the function named printTeacherFunction.
+*/
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+let printTeacher: printTeacherFunction;
+
+printTeacher = (firstName, lastName) => {
+  return `${firstName[0]}. ${lastName}`;
+}
