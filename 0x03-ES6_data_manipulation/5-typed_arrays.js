@@ -16,7 +16,7 @@ export default function createInt8TypedArray(length, position, value) {
     || typeof value !== 'number'
     || typeof position !== 'number'
   ) {
-    throw new Error('Position outside range');
+    throw new RangeError('Position outside range');
   }
   int8View[position] = value;
   return buffer;
