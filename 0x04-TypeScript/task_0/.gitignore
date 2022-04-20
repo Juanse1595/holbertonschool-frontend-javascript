@@ -1,4 +1,3 @@
 node*
-.eslint*
-*json*
-webpack*
+.eslintrc.json
+package-lock.json
